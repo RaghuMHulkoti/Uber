@@ -2,6 +2,7 @@ const express = require('express'); // Import express to create the router and h
 const router = express.Router(); // Initialize a new router instance for defining routes
 const { body } = require('express-validator'); // Import express-validator to validate incoming request data
 const userController = require('../controllers/user.controller'); // Import the userController for handling the register route
+const authMiddleware = require('../middlewares/auth.user');
 
 // POST request to the /register endpoint
 router.post("/register", [
@@ -15,4 +16,13 @@ router.post("/register", [
     body('password').isLength({ min: 6 }).withMessage('Password length must be at least 6 characters')
 ], userController.registerUser); // Call the registerUser method from the userController to handle the registration
 
+router.post("/login",[
+    body('email').isEmail().withMessage('Please enter a valid email'),
+    body('password').isLength({ min: 6 }).withMessage('Password length must be minimum 6 characters')
+],userController.loginUser); 
+
+
+router.get('/profile',authMiddleware.authUser,userController.getUserProfile);
+
+router.get('/logout',authMiddleware.authUser,userController.logoutUser);
 module.exports = router; // Export the router to be used in other parts of the application
