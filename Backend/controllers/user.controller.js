@@ -12,6 +12,10 @@ module.exports.registerUser = async (req, res, next) => {
 
     // Extract required fields from the request body
     const { fullName, email, password } = req.body;
+    const isUserAlreadyExist=await userModel.findOne({email});
+    if(isUserAlreadyExist) {
+        res.status(400).json({message:"Captain already exists"});
+    }
     console.log(req.body); // Log the request body (useful for debugging)
 
     // Hash the password using the static method defined in the user model

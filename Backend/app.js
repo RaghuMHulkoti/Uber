@@ -6,6 +6,8 @@ const cors=require('cors');
 const dbConnection=require('./db/db')
 const cookieParser=require('cookie-parser');
 const userRoutes=require('./routes/user.route')
+const captainRoutes=require('./routes/captain.route');
+
 
 dbConnection();
 app.use(cors());
@@ -16,5 +18,6 @@ app.get('/',(req,res)=>{
     res.send('Hello from ExpressJS!');
 })
 app.use("/users",userRoutes);
+app.use("/captains",captainRoutes);
 
 module.exports =app;
