@@ -2,7 +2,7 @@ const express = require('express'); // Import express to create the router and h
 const router = express.Router(); // Initialize a new router instance for defining routes
 const { body } = require('express-validator'); // Import express-validator to validate incoming request data
 const userController = require('../controllers/user.controller'); // Import the userController for handling the register route
-const authMiddleware = require('../middlewares/auth.user');
+const authMiddleware = require('../middlewares/auth.middleware');
 
 // POST request to the /register endpoint
 router.post("/register", [
