@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const UserLogin = () => {
-  const [email, setemail] = useState("");
-  const [password, setpassword] = useState("");
+  const [email, setemail] = useState('');
+  const [password, setpassword] = useState('');
   const [userData, setuserData] = useState({});
   const submitHandler =(e)=>{
     e.preventDefault();
