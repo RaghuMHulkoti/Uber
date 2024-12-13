@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
 
-const ConfirmedRide = () => {
+const ConfirmedRide = (props) => {
   return (
     <div>
-          <div>
       <h5
         onClick={() => {
           props.setVehiclePanel(false);
@@ -13,10 +12,25 @@ const ConfirmedRide = () => {
         <i className=" text-xl text-gray-500 ri-arrow-down-wide-line"></i>
       </h5>
       <h3 className="text-2xl font-semibold mb-5">Confirm your Ride</h3>
-    </div>
-    <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_956,h_638/v1596627972/assets/e7/e861a8-30ec-4d57-8045-7186f6c5ec35/original/comfort.png" alt="" />
-    </div>
-  )
-}
 
-export default ConfirmedRide
+      <div className="flex  gap-2 justify-between flex-col items-center">
+        <img
+          className="h-20"
+          src="https://swyft.pl/wp-content/uploads/2023/05/how-many-people-can-a-uberx-take.jpg"
+          alt=""
+        />
+        <div className="w-full">
+          <div>svasdv</div>
+          <div>ascfas</div>
+          <div>asca</div>
+        </div>
+
+        <button className="w-full mt-5 bg-green-600 text-black font-semibold p-2 rounded-lg">
+          Confirm
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default ConfirmedRide;

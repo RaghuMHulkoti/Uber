@@ -1,7 +1,6 @@
 import React from "react";
 import "remixicon/fonts/remixicon.css";
 const LocationSearchPanel = (props) => {
-  console.log(props);
   const locations = [
     "Dr,Ambedkar institute of technology",
     "Dr,Ambedkar institute of technology",
